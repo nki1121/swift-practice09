@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isShowAlert = false
+    
     var body: some View {
         VStack {
             Button {
