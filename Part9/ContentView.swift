@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var isShowAlert = false
+    @State var isShowDialog = false
     
     var body: some View {
         VStack {
             Button {
-                isShowAlert = true
+                isShowDialog = true
             } label: {
-                Text("アラートを表示")
+                Text("ダイアログを表示")
             }
-            .alert("タイトル", isPresented: $isShowAlert) {
-                Button("キャンセル") {
+            .confirmationDialog("タイトル", isPresented: $isShowDialog, titleVisibility: .visible) {
+                Button("選択肢1") {
                 }
-                Button("OK") {
+                Button("選択肢2") {
                 }
             } message: {
-                Text("ここに詳細メッセージを書きます")
+                Text("メッセージ")
             }
         }
         .padding()
