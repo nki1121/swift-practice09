@@ -13,9 +13,17 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button {
-                
+                isShowAlert = true
             } label: {
                 Text("アラートを表示")
+            }
+            .alert("タイトル", isPresented: $isShowAlert) {
+                Button("キャンセル") {
+                }
+                Button("OK") {
+                }
+            } message: {
+                Text("ここに詳細メッセージを書きます")
             }
         }
         .padding()
